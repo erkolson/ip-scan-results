@@ -1,0 +1,83 @@
+# Nmap 7.70 scan initiated Fri Apr 20 12:36:44 2018 as: nmap -Pn -p80,443,8443,5000,8080 -iL ips.txt -oA nmap.results -vvvvv
+# Ports scanned: TCP(5;80,443,5000,8080,8443) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 81.107.115.203 (cpc123026-glen5-2-0-cust970.2-1.cable.virginm.net)	Status: Up
+Host: 81.107.115.203 (cpc123026-glen5-2-0-cust970.2-1.cable.virginm.net)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 158.69.205.102 (nicholas.cybershark.net)	Status: Up
+Host: 158.69.205.102 (nicholas.cybershark.net)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 193.22.92.195 (loghermes.sysraildata.com)	Status: Up
+Host: 193.22.92.195 (loghermes.sysraildata.com)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 75.128.231.70 (75-128-231-70.dhcp.mrqt.mi.charter.com)	Status: Up
+Host: 75.128.231.70 (75-128-231-70.dhcp.mrqt.mi.charter.com)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 31.133.197.48 (gudevarangian.info)	Status: Up
+Host: 31.133.197.48 (gudevarangian.info)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/closed/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 185.5.127.183 ()	Status: Up
+Host: 185.5.127.183 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 34.253.166.19 (ec2-34-253-166-19.eu-west-1.compute.amazonaws.com)	Status: Up
+Host: 34.253.166.19 (ec2-34-253-166-19.eu-west-1.compute.amazonaws.com)	Ports: 80/filtered/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 123.243.191.198 (123-243-191-198.static.tpgi.com.au)	Status: Up
+Host: 123.243.191.198 (123-243-191-198.static.tpgi.com.au)	Ports: 80/filtered/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 114.242.131.194 ()	Status: Up
+Host: 114.242.131.194 ()	Ports: 80/filtered/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 54.238.79.92 (ec2-54-238-79-92.ap-northeast-1.compute.amazonaws.com)	Status: Up
+Host: 54.238.79.92 (ec2-54-238-79-92.ap-northeast-1.compute.amazonaws.com)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 50.24.100.28 (50-24-100-28.bcstcmtk02.res.dyn.suddenlink.net)	Status: Up
+Host: 50.24.100.28 (50-24-100-28.bcstcmtk02.res.dyn.suddenlink.net)	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 85.28.99.232 (cable-85.28.99.232.coditel.net)	Status: Up
+Host: 85.28.99.232 (cable-85.28.99.232.coditel.net)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 66.186.91.196 (sud-cable-cmts5-66-186-91-196.vianet.ca)	Status: Up
+Host: 66.186.91.196 (sud-cable-cmts5-66-186-91-196.vianet.ca)	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 192.162.233.53 (192-162-233-53.inaddr.vnstr.net)	Status: Up
+Host: 192.162.233.53 (192-162-233-53.inaddr.vnstr.net)	Ports: 80/open/tcp//http///, 443/closed/tcp//https///, 5000/closed/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 189.129.7.43 (dsl-189-129-7-43-dyn.prod-infinitum.com.mx)	Status: Up
+Host: 189.129.7.43 (dsl-189-129-7-43-dyn.prod-infinitum.com.mx)	Ports: 80/open/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 69.70.138.146 (modemcable146.138-70-69.static.videotron.ca)	Status: Up
+Host: 69.70.138.146 (modemcable146.138-70-69.static.videotron.ca)	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 196.17.55.67 ()	Status: Up
+Host: 196.17.55.67 ()	Ports: 80/open/tcp//http///, 443/closed/tcp//https///, 5000/closed/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 85.237.239.4 (85-237-239-4.static.orange.sk)	Status: Up
+Host: 85.237.239.4 (85-237-239-4.static.orange.sk)	Ports: 80/filtered/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 187.200.8.215 (dsl-187-200-8-215-dyn.prod-infinitum.com.mx)	Status: Up
+Host: 187.200.8.215 (dsl-187-200-8-215-dyn.prod-infinitum.com.mx)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 182.253.35.117 ()	Status: Up
+Host: 182.253.35.117 ()	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 83.145.85.173 (reverse.completel.net)	Status: Up
+Host: 83.145.85.173 (reverse.completel.net)	Ports: 80/closed/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 74.205.93.171 (127398-app1.digitalmediacommunications.com)	Status: Up
+Host: 74.205.93.171 (127398-app1.digitalmediacommunications.com)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 192.230.94.173 (192.230.94.173.ip.incapdns.net)	Status: Up
+Host: 192.230.94.173 (192.230.94.173.ip.incapdns.net)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 96.238.51.251 (pool-96-238-51-251.prvdri.fios.verizon.net)	Status: Up
+Host: 96.238.51.251 (pool-96-238-51-251.prvdri.fios.verizon.net)	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 213.180.93.14 ()	Status: Up
+Host: 213.180.93.14 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/closed/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 104.18.156.235 ()	Status: Up
+Host: 104.18.156.235 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 104.23.138.35 ()	Status: Up
+Host: 104.23.138.35 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 104.23.201.32 ()	Status: Up
+Host: 104.23.201.32 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 211.228.220.76 ()	Status: Up
+Host: 211.228.220.76 ()	Ports: 80/open/tcp//http///, 443/filtered/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 151.80.25.235 (ns3017978.ip-151-80-25.eu)	Status: Up
+Host: 151.80.25.235 (ns3017978.ip-151-80-25.eu)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/filtered/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 187.156.61.222 (dsl-187-156-61-222-dyn.prod-infinitum.com.mx)	Status: Up
+Host: 187.156.61.222 (dsl-187-156-61-222-dyn.prod-infinitum.com.mx)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 181.137.43.232 (hfc-181-137-43-232.une.net.co)	Status: Up
+Host: 181.137.43.232 (hfc-181-137-43-232.une.net.co)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 188.125.35.169 (apn-188-125-35-169.static.gprs.plus.pl)	Status: Up
+Host: 188.125.35.169 (apn-188-125-35-169.static.gprs.plus.pl)	Ports: 80/filtered/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 119.63.123.49 (119-63-123-49.catv.tees.ne.jp)	Status: Up
+Host: 119.63.123.49 (119-63-123-49.catv.tees.ne.jp)	Ports: 80/filtered/tcp//http///, 443/filtered/tcp//https///, 5000/open/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 107.154.143.108 (107.154.143.108.ip.incapdns.net)	Status: Up
+Host: 107.154.143.108 (107.154.143.108.ip.incapdns.net)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///
+Host: 47.93.173.17 ()	Status: Up
+Host: 47.93.173.17 ()	Ports: 80/closed/tcp//http///, 443/closed/tcp//https///, 5000/open/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 183.102.183.60 ()	Status: Up
+Host: 183.102.183.60 ()	Ports: 80/filtered/tcp//http///, 443/closed/tcp//https///, 5000/open/tcp//upnp///, 8080/closed/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 178.148.177.151 (cable-178-148-177-151.dynamic.sbb.rs)	Status: Up
+Host: 178.148.177.151 (cable-178-148-177-151.dynamic.sbb.rs)	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+Host: 217.100.37.170 (D96425AA.static.ziggozakelijk.nl)	Status: Up
+Host: 217.100.37.170 (D96425AA.static.ziggozakelijk.nl)	Ports: 80/open/tcp//http///, 443/filtered/tcp//https///, 5000/open/tcp//upnp///, 8080/filtered/tcp//http-proxy///, 8443/filtered/tcp//https-alt///
+Host: 121.22.246.97 ()	Status: Up
+Host: 121.22.246.97 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 5000/open/tcp//upnp///, 8080/open/tcp//http-proxy///, 8443/closed/tcp//https-alt///
+# Nmap done at Fri Apr 20 12:36:58 2018 -- 40 IP addresses (40 hosts up) scanned in 13.95 seconds
