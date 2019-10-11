@@ -9,10 +9,21 @@ else:
 
 support_ports = {'80', '443', '5000', '8080', '8443'}
 
-connection = sqlite3.connect(":memory:")
+# Setup database connection
+connection = sqlite3.connect(":memory:", check_same_thread=False)
 schema = "(ip text, hostname text, tcp80_state text, tcp80_reason text, tcp443_state text, tcp443_reason text, tcp5000_state text, tcp5000_reason text, tcp8080_state text, tcp8080_reason text, tcp8443_state text, tcp8443_reason text)"
 c = connection.cursor()
-# c.execute("CREATE TABLE hosts {}".format(schema))
+
+# Check if the schema has been loaded
+# returns true if ready
+# returns false if not
+def db_ready():
+    c.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='hosts'")
+    status = c.fetchone()
+    if status[0] == 1:
+        return True
+    else:
+        return False
 
 # ip = string, ip address
 # hostname = string, hostname
@@ -72,32 +83,44 @@ def load_db(file_path):
     return (records_stored, nmap_report.summary)
 
 def get_ip(ip):
-    hostname = ""
-    q = (ip,)
-    c.execute('SELECT hostname FROM hosts WHERE ip=?',q)
-    tuple = c.fetchone()
-    if tuple:
-        hostname = tuple[0]
-    return hostname
+    if db_ready():
+        hostname = ""
+        q = (ip,)
+        c.execute('SELECT hostname FROM hosts WHERE ip=?',q)
+        tuple = c.fetchone()
+        if tuple:
+            hostname = tuple[0]
+        return hostname
+    else:
+        return ""
 
 def get_host(ip):
-    q = (ip,)
-    c.execute('SELECT * FROM hosts WHERE ip=?',q)
-    return c.fetchone()
+    if db_ready():
+        q = (ip,)
+        c.execute('SELECT * FROM hosts WHERE ip=?',q)
+        return c.fetchone()
+    else:
+        return ('','','','','','','','','','','','')
 
 # Return tuples of all hosts with specified port open
 def get_hosts_open_port(port):
-    # lets not yolo with the db, check for valid ports and construct the
-    # column name
-    port_string = str(port)
-    if port_string not in support_ports:
-        print("ERROR: unsupported port {}".format(port))
-        return 1
-    col = "tcp{}_state".format(port_string)
+    if db_ready():
+        # lets not yolo with the db, check for valid ports and construct the
+        # column name
+        port_string = str(port)
+        if port_string not in support_ports:
+            print("ERROR: unsupported port {}".format(port))
+            return 1
+        col = "tcp{}_state".format(port_string)
 
-    query = "SELECT * FROM hosts WHERE {} = 'open'".format(col)
+        query = "SELECT * FROM hosts WHERE {} = 'open'".format(col)
 
-    return [row for row in c.execute(query)]
+        return [row for row in c.execute(query)]
+    else:
+        return []
 
 def get_all():
-    return [row for row in c.execute('SELECT * FROM hosts')]
+    if db_ready():
+        return [row for row in c.execute('SELECT * FROM hosts')]
+    else:
+        return []

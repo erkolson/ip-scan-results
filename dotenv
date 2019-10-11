@@ -1,0 +1,2 @@
+# export LOG_LEVEL=DEBUG
+export XSS_KEY=<secret-key>

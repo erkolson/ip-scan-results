@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if hosts %}
+<div><p>{{ host }}</p></div>
+<table class="ht">
+  <tr>
+    <th class="ht-t"></th>
+    <th class="ht-t"></th>
+    <th class="ht-t" colspan="2">tcp/80/http</th>
+    <th class="ht-t" colspan="2">tcp/443/https</th>
+    <th class="ht-t" colspan="2">tcp/5000/upnp</th>
+    <th class="ht-t" colspan="2">tcp/8080/http-proxy</th>
+    <th class="ht-t" colspan="2">tcp/8443/https-alt</th>
+  </tr>
+  <tr>
+    <th class="ht-b">IP Address</th>
+    <th class="ht-b">Hostname</th>
+    <th class="ht-b">State</th>
+    <th class="ht-b">Reason</th>
+    <th class="ht-b">State</th>
+    <th class="ht-b">Reason</th>
+    <th class="ht-b">State</th>
+    <th class="ht-b">Reason</th>
+    <th class="ht-b">State</th>
+    <th class="ht-b">Reason</th>
+    <th class="ht-b">State</th>
+    <th class="ht-b">Reason</th>
+  </tr>
+{%  for host in hosts %}
+  <tr>
+    <td class="htr">{{ host[0] }}</td>
+    <td class="htr">{{ host[1] }}</td>
+    <td class="htr">{{ host[2] }}</td>
+    <td class="htr">{{ host[3] }}</td>
+    <td class="htr">{{ host[4] }}</td>
+    <td class="htr">{{ host[5] }}</td>
+    <td class="htr">{{ host[6] }}</td>
+    <td class="htr">{{ host[7] }}</td>
+    <td class="htr">{{ host[8] }}</td>
+    <td class="htr">{{ host[9] }}</td>
+    <td class="htr">{{ host[10] }}</td>
+    <td class="htr">{{ host[11] }}</td>
+  </tr>
+{%  endfor %}
+</table>
+{% else %}
+No hosts to view
+{% endif %}
+{% endblock %}
