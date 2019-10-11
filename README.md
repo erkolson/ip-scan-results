@@ -41,8 +41,9 @@ options for working with the SQLite datastore:
 
 The code in this repository follows the first option.
 
-## Still to do
+## Next Steps
 1. Package in a Dockerfile
 1. Run with an actual web server
 1. Implement logger
 1. Add webapp tests
+1. Make the UI look nice
