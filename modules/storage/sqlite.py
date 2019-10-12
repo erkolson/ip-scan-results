@@ -39,16 +39,16 @@ def store_ip(ip, hostname, services):
     c.execute("INSERT INTO hosts VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')".format(
         ip,
         hostname,
-        ports['80']['state'],
-        ports['80']['reason'],
-        ports['443']['state'],
-        ports['443']['reason'],
-        ports['5000']['state'],
-        ports['5000']['reason'],
-        ports['8080']['state'],
-        ports['8080']['reason'],
-        ports['8443']['state'],
-        ports['8443']['reason'],
+        ports['80']['state'] if '80' in ports else 'None',
+        ports['80']['reason'] if '80' in ports else 'None',
+        ports['443']['state'] if '443' in ports else 'None',
+        ports['443']['reason'] if '443' in ports else 'None',
+        ports['5000']['state'] if '5000' in ports else 'None',
+        ports['5000']['reason'] if '5000' in ports else 'None',
+        ports['8080']['state'] if '8080' in ports else 'None',
+        ports['8080']['reason'] if '8080' in ports else 'None',
+        ports['8443']['state'] if '8443' in ports else 'None',
+        ports['8443']['reason']  if '8443' in ports else 'None',
         ))
 
 def load_db(file_path):
