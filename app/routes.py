@@ -13,14 +13,14 @@ app.config['SECRET_KEY'] = os.environ.get('XSS_KEY')
 def allowed_extension(filename):
     return '.' in filename and filename.split('.')[-1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/all')
+@app.route('/scan')
 def all():
     hosts = get_all()
     return render_template('hosts.html', hosts=hosts)
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-@app.route('/upload', methods=['GET', 'POST'])
+# @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -34,11 +34,11 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             (num_stored, summary) = load_db(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect('/all')
+            return redirect('/scan')
     # GET
     return render_template('load.html')
 
-@app.route('/open/<port>')
+@app.route('/scan/open/<port>')
 def open_port(port):
     hosts = get_hosts_open_port(port)
     return render_template('hosts.html', hosts=hosts)

@@ -20,10 +20,7 @@ c = connection.cursor()
 def db_ready():
     c.execute("SELECT count(*) FROM sqlite_master WHERE type='table' AND name='hosts'")
     status = c.fetchone()
-    if status[0] == 1:
-        return True
-    else:
-        return False
+    return status[0] == 1
 
 # ip = string, ip address
 # hostname = string, hostname
