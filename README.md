@@ -20,11 +20,11 @@ are purged when a new file is uploaded.
 
 ## Objectives
 
-  1. Build a REST API to import a single nmap scan result.
-    1. The API should accept a single nmap scan file.
-    1. Detail which you chose and why.
-  1. Ingest the nmap result into a sqlite database.
-  1. Build a UI that allows a user to view the results of nmap scans by IP address.
+1.  Build a REST API to import a single nmap scan result.
+    1.  The API should accept a single nmap scan file.
+    1.   Detail which you chose and why.
+1.  Ingest the nmap result into a sqlite database.
+1.  Build a UI that allows a user to view the results of nmap scans by IP address.
 
 
 ## Decisions
@@ -49,10 +49,23 @@ options for working with the SQLite datastore:
 
 The code in this repository follows the first option.
 
+## Return Types
+
+The API will return json at the following endpoints for any `Accept` header except
+`text/html`. (If no Accept header is provided, it will also return json)
+```
+/scan
+/scan/open/80
+/scan/open/443
+/scan/open/5000
+/scan/open/8080
+/scan/open/8443
+```
+For the above paths, With the header `Accept: text/html`, html will be returned.
+
 ## Next Steps
 
 1. Package in a Dockerfile, non-root user, etc
-1. Return json option
 1. Run with an actual web server
 1. Implement logger
 1. Add webapp tests

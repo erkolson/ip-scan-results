@@ -7,7 +7,7 @@ if 'LOG_LEVEL' in os.environ:
 else:
     LOG_LEVEL = ''
 
-support_ports = {'80', '443', '5000', '8080', '8443'}
+supported_ports = {'80', '443', '5000', '8080', '8443'}
 
 # Setup database connection
 connection = sqlite3.connect(":memory:", check_same_thread=False)
@@ -105,7 +105,7 @@ def get_hosts_open_port(port):
         # lets not yolo with the db, check for valid ports and construct the
         # column name
         port_string = str(port)
-        if port_string not in support_ports:
+        if port_string not in supported_ports:
             print("ERROR: unsupported port {}".format(port))
             return 1
         col = "tcp{}_state".format(port_string)
@@ -121,3 +121,19 @@ def get_all():
         return [row for row in c.execute('SELECT * FROM hosts')]
     else:
         return []
+
+def host_to_dict(host):
+    host_dict = {}
+    host_dict['ip'] = host[0]
+    host_dict['hostname'] = host[1]
+    host_dict['tcp80_state'] = host[2]
+    host_dict['tcp80_reason'] = host[3]
+    host_dict['tcp443_state'] =  host[4]
+    host_dict['tcp443_reason'] = host[5]
+    host_dict['tcp5000_state'] = host[6]
+    host_dict['tcp5000_reason'] = host[7]
+    host_dict['tcp8080_state'] = host[8]
+    host_dict['tcp8080_reason'] = host[9]
+    host_dict['tcp8443_state'] = host[10]
+    host_dict['tcp8443_reason'] = host[11]
+    return host_dict
