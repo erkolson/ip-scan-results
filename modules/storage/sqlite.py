@@ -99,15 +99,19 @@ def get_host(ip):
     else:
         return ('','','','','','','','','','','','')
 
+def supported_port(port):
+    port_string = str(port)
+    return port_string in supported_ports
+
 # Return tuples of all hosts with specified port open
 def get_hosts_open_port(port):
     if db_ready():
-        # lets not yolo with the db, check for valid ports and construct the
-        # column name
-        port_string = str(port)
-        if port_string not in supported_ports:
+        if not supported_port(port):
             print("ERROR: unsupported port {}".format(port))
             return 1
+        # string has been validated so this is safe now.
+        port_string = str(port)
+
         col = "tcp{}_state".format(port_string)
 
         query = "SELECT * FROM hosts WHERE {} = 'open'".format(col)

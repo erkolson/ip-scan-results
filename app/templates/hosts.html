@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if error %}
+<h2>ERROR: {{ error }}</h2>
+{% endif %}
 {% if hosts %}
 <div><p>{{ host }}</p></div>
 <table class="ht">

@@ -1,8 +1,9 @@
 import os
 from flask import render_template, flash, request, redirect, url_for, jsonify
 from flask_accept import accept, accept_fallback
+from flask_api import status
 from app import app
-from modules.storage.sqlite import load_db, get_ip, get_host, get_hosts_open_port, get_all, host_to_dict
+from modules.storage.sqlite import load_db, get_ip, get_host, get_hosts_open_port, get_all, host_to_dict, supported_port
 from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = '/tmp'
@@ -47,10 +48,16 @@ def all_web():
 @app.route('/scan/open/<port>')
 @accept_fallback
 def open_port(port):
-    hosts = get_hosts_open_port(port)
-    return jsonify([host_to_dict(host) for host in hosts])
+    if supported_port(port):
+        hosts = get_hosts_open_port(port)
+        return jsonify([host_to_dict(host) for host in hosts])
+    else:
+        return {'ERROR': "Port Not Supported"}, status.HTTP_404_NOT_FOUND
 
 @open_port.support('text/html')
 def open_port_web(port):
-    hosts = get_hosts_open_port(port)
-    return render_template('hosts.html', hosts=hosts)
+    if supported_port(port):
+        hosts = get_hosts_open_port(port)
+        return render_template('hosts.html', hosts=hosts)
+    else:
+        return render_template('hosts.html', error="Port Not Supported."), status.HTTP_404_NOT_FOUND
